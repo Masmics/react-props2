@@ -1,20 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Color({ name, hex, rgb }) {
-// left off: if name isn't passed, default to hex value
-// use it in App
-// render App in index.js
   return (
-    <dl>
-      <dt>Name: </dt>
-      <dd>{ name }</dd>
+    <table>
+      <tr>Name: </tr>
+      <td>{ name }</td>
 
-      <dt>Hex: </dt>
-      <dd>{ hex }</dd>
+      <tr>Hex: </tr>
+      <td>{ hex }</td>
 
-      <dt>RGB: </dt>
-      <dd>{ rgb }</dd> 
-
-    </dl>
+      <tr>RGB: </tr>
+      <td>{ rgb }</td>
+    </table>
   );
 }
+
+Color.propTypes = {
+  name: PropTypes.string.isRequired,
+  hex: PropTypes.string.isRequired,
+  rgb: PropTypes.string.isRequired
+};
